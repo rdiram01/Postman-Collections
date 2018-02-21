@@ -1,0 +1,847 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: DevApis
+  description: 'TODO: Add Description'
+host: mobilememberstage.bluecrossma.com
+basePath: /memapi_dev/mobilekeyservice/v1
+securityDefinitions:
+  auth:
+    type: oauth2
+    flow: implicit
+    authorizationUrl: https://mobilememberstage.bluecrossma.com/memapi_dev/mobilekeyservice/v1
+    scopes: {}
+    x-skip-client-authentication: false
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /member/v1/access/registermem:
+    post:
+      description: ''
+      summary: dev/registermem
+      tags:
+      - Misc
+      operationId: MemberV1AccessRegistermemPost
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/Dev~1registermemrequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /member/v1/access/registermem
+          headers:
+            Content-Type: application/json
+          body: >-
+            {
+                "message": "BKhp4csbNFLvj8yztgOWTMKADzkbjD3Lunny+CQtFMsN/R3zZthRNEMPC7Y8eyqGGV+zBIO99Potniq3B9SGMVy2wmP5rez/7CvUHDASIrEFSPOacks7EVfRWEBV3ko5qk0d9C7axftJ31rQBzW3HXA8r/9nZO7lzljGDIJXWRk=",
+                "key1id": "1b282082aee6481dbd38cad39edc3117"
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: dev/registermem
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /member/v1/access/memberlogin:
+    post:
+      description: ''
+      summary: dev/memberlogin
+      tags:
+      - Misc
+      operationId: MemberV1AccessMemberloginPost
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/Dev~1memberloginrequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /member/v1/access/memberlogin
+          headers:
+            Content-Type: application/json
+          body: >-
+            {
+                "message": "pjsGzPjGwy6WgN5orsfIkWiZXpj6OfoxUyrQHnaYuaSN+UyAeUJ2Vx7B1/Dszlm3f4EtqxS4Rk0Sp3IFyQ9vw5CW1j8tAl5+JZOstpsPvmEJpxVoddM8bIlymIQ53bKRYNay9QaNrC4sgbP/mn9VFw==",
+                "key1id": "c838c12f13c2458aafd6e4e029e2f884"
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: dev/memberlogin
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /member/v1/registration/sendaccesscode:
+    post:
+      description: ''
+      summary: dev/sendaccesscode
+      tags:
+      - Misc
+      operationId: MemberV1RegistrationSendaccesscodePost
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/Dev~1sendaccesscoderequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /member/v1/registration/sendaccesscode
+          headers:
+            Content-Type: application/json
+            Authorization: Bearer ZIxe7zs6NwxJzAW8wEq5L1zEAI2r
+          body: >-
+            {
+                "message": "t43SYE6W0A6r59KNDnssVqedAf1sU/xTiTNV6ppDOW0SR5ZuUrFtA221WcFLUIzJt1YZlASYSuBbMAqC39YIkuSYF7RlqruswDLdBgI3pDI=",
+                "key1id": "8bafb4f9e06643beab00e0044a841fee"
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: dev/sendaccesscode
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /member/v1/registration/verifyaccesscode:
+    post:
+      description: ''
+      summary: dev/verifyaccesscode
+      tags:
+      - Misc
+      operationId: MemberV1RegistrationVerifyaccesscodePost
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/Dev~1verifyaccesscoderequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /member/v1/registration/verifyaccesscode
+          headers:
+            Content-Type: application/json
+            Authorization: Bearer ZIxe7zs6NwxJzAW8wEq5L1zEAI2r
+          body: >-
+            {
+                "message": "zFdzSjGHfTH/Vtj/LhwUjEPZMlqHLMqlR/4b2cr+SjtW9RjwL2kA2jbsoHZkzgYOtaW/kkQJHr1NFS8SNDV3NdtQ0lqa9S0KowHxLZtMwDfeLqdDumisJUG3LeWHC4185TIDgTXZUw8D3XdwMjvRVA==",
+                "key1id": "71adb693f2f4457abfc493949f9a4f2b"
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: dev/verifyaccesscode
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /member/v1/registration/updatememauthinfo:
+    post:
+      description: ''
+      summary: dev/updatememauthinfo
+      tags:
+      - Misc
+      operationId: MemberV1RegistrationUpdatememauthinfoPost
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/Dev~1updatememauthinforequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /member/v1/registration/updatememauthinfo
+          headers:
+            Content-Type: application/json
+            Authorization: Bearer aKrJZrkZ0eVFAjutwCGJMAmku3Uk
+          body: >-
+            {
+                "message": "L4ni23i5hj1EySUx63t06fz8EvkBFM47aq4hJ6+orP3e0yf4DuimPGnQGgFOs3bA+zE0Nx2WXuuVchMC2rmsodgveRx1gegoZkLcTSZ3ipQgvfvhqnpMAIl6hSsOcrkjNBWwRFhxHM0Xs8xy4fPrRf69nOM1ZgtqTTJZIRSJbhJSvhPeOnetACD/vWPymiNTDc5WMZn0yFU0RS8Vbmo/vN6J7OefF8qY6q76uM7enhMbSMixz9dsAlTOZBeKldAe2PnC9ORu2j5kgfKqhY+juncj9eyk89RiQ8XjairRl6Y5uUbtHUipPC3osZK0gXH05TSto9eW+CUAvkUiocfo452EjSRQivdKYp6PyTwNouU=",
+                "key1id": "71adb693f2f4457abfc493949f9a4f2b"
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: dev/updatememauthinfo
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /member/v1/registration/getmemauthinfo:
+    post:
+      description: ''
+      summary: dev/getmemauthinfo
+      tags:
+      - Misc
+      operationId: MemberV1RegistrationGetmemauthinfoPost
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/Dev~1getmemauthinforequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /member/v1/registration/getmemauthinfo
+          headers:
+            Content-Type: application/json
+            Authorization: Bearer KN4SZHnI2vGfrXekmbPHBrNCbwsJ
+          body: >-
+            {
+                "message": "zFdzSjGHfTH/Vtj/LhwUjEPZMlqHLMqlR/4b2cr+SjsESiNU/LTxcvUsZC3w5l2xclpe9Oj+3MiTlNLgmN5f1ZcSr9r8bBjAD5hEED8tWSU=",
+                "key1id": "71adb693f2f4457abfc493949f9a4f2b"
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: dev/getmemauthinfo
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /member/v1/registration/authwithssn:
+    post:
+      description: Final step in Authentication process when Member enters their ssn
+      summary: dev/authwithssn
+      tags:
+      - Misc
+      operationId: MemberV1RegistrationAuthwithssnPost
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/Dev~1authwithssnrequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /member/v1/registration/authwithssn
+          headers:
+            Content-Type: application/json
+            Authorization: Bearer BkzSWLAEuuHoaYetKhJWeJDG4Rw2
+          body: >-
+            {
+                "message": "zFdzSjGHfTH/Vtj/LhwUjEPZMlqHLMqlR/4b2cr+Sjv9UJ2Ck171IDBwuwFAC5ia0MA+x4zWN6m2f1yb1YAtHta3FROTPUN8iDisuHCD/XaUfZmdR4IgTVSOdZCdha9l",
+                "key1id": "71adb693f2f4457abfc493949f9a4f2b"
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: dev/authwithssn
+        x-testDescription: Final step in Authentication process when Member enters their ssn
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /gettokens:
+    get:
+      description: ''
+      summary: saltedGetTokens
+      tags:
+      - Misc
+      operationId: GettokensGet
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /gettokens
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: saltedGetTokens
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /clientsidedecryption:
+    post:
+      description: ''
+      summary: decrypt
+      tags:
+      - Misc
+      operationId: ClientsidedecryptionPost
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/DecryptRequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: autho
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /clientsidedecryption
+          headers:
+            Content-Type: application/json
+            autho: Bearer 5vHUUgC91kO1WC6SUtgYstMEDAgI
+          body: >-
+            {
+                "message": "LaYioNcIw5nwn7+pZRPcDrEMCbv0Ay3tvU8pKZNtYWm4qUnBbL+W0FT0U+Zf7+sqJBz08HDaWBoQoaMCXyObHasVu3jDprFP8E7cA1MOxHZKsF1ruLcOqTR0uWqIHQfud3ZUYqdqRXMBLoT8Xw8xVIo44CyEOuNGr95Ynp6f2JLx1PjYLkUpAGvkd9ttWknSstqNNwZIscFNmP0f8Kw6dZlJ6O1n+uSIVx/5BYAiPwgi+6nX7N8wZ6gpYJpk50a6ELq1YE4uvwYtYGL4O4EwHuGya8FGB2gglCYSBslTa8QqLOzNW5lWg93MfBYQrAqlS29owYZrztvx8R9Gn1uRJZco7PItsaeeVyM99tNul2+BxRyP7RTIT4QWwvxb+0TwsVrqw6IjT/a4zr0+RIHSqJZEMhvkJvU9zZZTqO9kCT7ilzi3qKZxKBNRx9K+vAvkLhejUY/gJWWowNHmr3UCNWqNG1M7d0Bc7Z8q0wp/NATndxtWhiKMrZ2ZdXQFoVmpxBa3sCJGOCN6ECMfTgMHXqq6TgyE9uW2zPY3V0WgZqpkHi85GsXOYzPGnE4GF1oCnIAzG92c7jqI+n2ZxjFWznHCIr9Al7ZqPJaLjj4Tq+aQg2Sdv7B8oixzy7RlEfHEiaRN3lBGYbK6VDk62uiCXaiGzjc6vEEwGfSSnvoMyCCkJPFArRpxIW/e2LUvl2ENnNulEcniFuc0xLD0VhnS/yk8IEVJsJWeYGPH35JWuaEhjH04D7co3g0LZZCNWbiOgE7StlQVRuDWc8eQhy6tmwP9U9BF2ZZFp2pwyXQBsoa7IHnWdQkoNvzvJr2HAOX4HFdM1FFqQVrIAZk1ZtxOvj1+k4/7OJxImBnLZtIOCBDnxl06PQSKBjmKzSLu1VqQeAZygGaaVcqEe2RDpsOPfLhwQE4Mx9O/Xn+++egX9tWipP2KrjM/++MsBhBf2W0wGWZG47IYHuITh4lfgLuOLDK9jHanq6cNYIspsEJQJqcz6fXuJXB2fHVDqQieWmmG",
+                "key2id":"e3d6c6213b6b4458916142ff2cb71db1"
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: decrypt
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /member/v1/info/updatememprofile:
+    post:
+      description: ''
+      summary: dev/updatememprofile
+      tags:
+      - Misc
+      operationId: MemberV1InfoUpdatememprofilePost
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/Dev~1updatememprofilerequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+        400:
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/Dev~1updatememprofile'
+          examples:
+            application/json:
+              result: -1
+              errormessage: uid or upid or subid or ttype or memkey or memkeyvalue are empty
+              displaymessage: uid or upid or subid or ttype or memkey or memkeyvalue are empty
+      security: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /member/v1/info/updatememprofile
+          headers:
+            Content-Type: application/json
+            Authorization: Bearer aRiTglnFfpofUGHhlobnHIQDimKA
+          body: >-
+            {
+                "message": "eOc7jw73C+4hKtew2NSGpWp8vvMKZM9/nAGTnfuF2y6F38NlI4Smb7JkSb1iMMTmfiXWtacveEVCal0kPpZD6l8FqOntA0NSLQEbwkAplNGhJvHuTw4htRplzzytHw2OugKsQ5BjxfaFyTpCcS4aaQIkl5ctZk/XHOH74NyA/e711aOajBOMF9iGPMX01y9qki5Q23Gd7D6zisztTJsLvhT2xc45lzntLrSWjlxsLkNfITHU5Sk8IG7fPHt9AucIrnJ4qEid2OwAbwCrkWetzw==",
+                "key1id": "0fd3e4264e6c4734af3cabdfa21ffa87"
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: dev/updatememprofile
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /member/v1/info/updatemempreference:
+    post:
+      description: ''
+      summary: dev/updatememprofile copy
+      tags:
+      - Misc
+      operationId: MemberV1InfoUpdatemempreferencePost
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/Dev~1updatememprofileCopyrequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+        400:
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/Dev~1updatememprofile'
+          examples:
+            application/json:
+              result: -1
+              errormessage: uid or upid or subid or ttype or memkey or memkeyvalue are empty
+              displaymessage: uid or upid or subid or ttype or memkey or memkeyvalue are empty
+      security: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /member/v1/info/updatemempreference
+          headers:
+            Content-Type: application/json
+            Authorization: Bearer eVP0RfgvGr62WUHo7B1YX11sZPDQ
+          body: >-
+            {
+                "message": "LG3jPpH73/1v6pvve5cbi4te4ZH+yD5rueIw4gh5JugsDqQP2QKP80BAn265Czv2p1kri70m7PRZTje7eLk22Ve0qUN4uOjcosxrH/YeCs+qiC0O+YcS+4AMLtGOQ/JjQ7bJDHSk91WC3T747BHWaqaWbOhu+g8Nld1E0Iqux694+ceXPMoBT6YVhA19JThhysYP5Cub1/kp3U3FDUhtr4ir4i03MdoeED4Ws49s69nOjNd57eZucDIGcYZGWpNlrSw8KWeBixNRvbJSPApFaQ==",
+                "key1id": "c2376ededd0d4101929c6084679ab10f"
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: dev/updatememprofile copy
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+definitions:
+  Dev/registermemrequest:
+    title: dev/registermemRequest
+    example:
+      message: BKhp4csbNFLvj8yztgOWTMKADzkbjD3Lunny+CQtFMsN/R3zZthRNEMPC7Y8eyqGGV+zBIO99Potniq3B9SGMVy2wmP5rez/7CvUHDASIrEFSPOacks7EVfRWEBV3ko5qk0d9C7axftJ31rQBzW3HXA8r/9nZO7lzljGDIJXWRk=
+      key1id: 1b282082aee6481dbd38cad39edc3117
+    type: object
+    properties:
+      message:
+        description: ''
+        example: BKhp4csbNFLvj8yztgOWTMKADzkbjD3Lunny+CQtFMsN/R3zZthRNEMPC7Y8eyqGGV+zBIO99Potniq3B9SGMVy2wmP5rez/7CvUHDASIrEFSPOacks7EVfRWEBV3ko5qk0d9C7axftJ31rQBzW3HXA8r/9nZO7lzljGDIJXWRk=
+        type: string
+      key1id:
+        description: ''
+        example: 1b282082aee6481dbd38cad39edc3117
+        type: string
+    required:
+    - message
+    - key1id
+  Dev/memberloginrequest:
+    title: dev/memberloginRequest
+    example:
+      message: pjsGzPjGwy6WgN5orsfIkWiZXpj6OfoxUyrQHnaYuaSN+UyAeUJ2Vx7B1/Dszlm3f4EtqxS4Rk0Sp3IFyQ9vw5CW1j8tAl5+JZOstpsPvmEJpxVoddM8bIlymIQ53bKRYNay9QaNrC4sgbP/mn9VFw==
+      key1id: c838c12f13c2458aafd6e4e029e2f884
+    type: object
+    properties:
+      message:
+        description: ''
+        example: pjsGzPjGwy6WgN5orsfIkWiZXpj6OfoxUyrQHnaYuaSN+UyAeUJ2Vx7B1/Dszlm3f4EtqxS4Rk0Sp3IFyQ9vw5CW1j8tAl5+JZOstpsPvmEJpxVoddM8bIlymIQ53bKRYNay9QaNrC4sgbP/mn9VFw==
+        type: string
+      key1id:
+        description: ''
+        example: c838c12f13c2458aafd6e4e029e2f884
+        type: string
+    required:
+    - message
+    - key1id
+  Dev/sendaccesscoderequest:
+    title: dev/sendaccesscodeRequest
+    example:
+      message: t43SYE6W0A6r59KNDnssVqedAf1sU/xTiTNV6ppDOW0SR5ZuUrFtA221WcFLUIzJt1YZlASYSuBbMAqC39YIkuSYF7RlqruswDLdBgI3pDI=
+      key1id: 8bafb4f9e06643beab00e0044a841fee
+    type: object
+    properties:
+      message:
+        description: ''
+        example: t43SYE6W0A6r59KNDnssVqedAf1sU/xTiTNV6ppDOW0SR5ZuUrFtA221WcFLUIzJt1YZlASYSuBbMAqC39YIkuSYF7RlqruswDLdBgI3pDI=
+        type: string
+      key1id:
+        description: ''
+        example: 8bafb4f9e06643beab00e0044a841fee
+        type: string
+    required:
+    - message
+    - key1id
+  Dev/verifyaccesscoderequest:
+    title: dev/verifyaccesscodeRequest
+    example:
+      message: zFdzSjGHfTH/Vtj/LhwUjEPZMlqHLMqlR/4b2cr+SjtW9RjwL2kA2jbsoHZkzgYOtaW/kkQJHr1NFS8SNDV3NdtQ0lqa9S0KowHxLZtMwDfeLqdDumisJUG3LeWHC4185TIDgTXZUw8D3XdwMjvRVA==
+      key1id: 71adb693f2f4457abfc493949f9a4f2b
+    type: object
+    properties:
+      message:
+        description: ''
+        example: zFdzSjGHfTH/Vtj/LhwUjEPZMlqHLMqlR/4b2cr+SjtW9RjwL2kA2jbsoHZkzgYOtaW/kkQJHr1NFS8SNDV3NdtQ0lqa9S0KowHxLZtMwDfeLqdDumisJUG3LeWHC4185TIDgTXZUw8D3XdwMjvRVA==
+        type: string
+      key1id:
+        description: ''
+        example: 71adb693f2f4457abfc493949f9a4f2b
+        type: string
+    required:
+    - message
+    - key1id
+  Dev/updatememauthinforequest:
+    title: dev/updatememauthinfoRequest
+    example:
+      message: L4ni23i5hj1EySUx63t06fz8EvkBFM47aq4hJ6+orP3e0yf4DuimPGnQGgFOs3bA+zE0Nx2WXuuVchMC2rmsodgveRx1gegoZkLcTSZ3ipQgvfvhqnpMAIl6hSsOcrkjNBWwRFhxHM0Xs8xy4fPrRf69nOM1ZgtqTTJZIRSJbhJSvhPeOnetACD/vWPymiNTDc5WMZn0yFU0RS8Vbmo/vN6J7OefF8qY6q76uM7enhMbSMixz9dsAlTOZBeKldAe2PnC9ORu2j5kgfKqhY+juncj9eyk89RiQ8XjairRl6Y5uUbtHUipPC3osZK0gXH05TSto9eW+CUAvkUiocfo452EjSRQivdKYp6PyTwNouU=
+      key1id: 71adb693f2f4457abfc493949f9a4f2b
+    type: object
+    properties:
+      message:
+        description: ''
+        example: L4ni23i5hj1EySUx63t06fz8EvkBFM47aq4hJ6+orP3e0yf4DuimPGnQGgFOs3bA+zE0Nx2WXuuVchMC2rmsodgveRx1gegoZkLcTSZ3ipQgvfvhqnpMAIl6hSsOcrkjNBWwRFhxHM0Xs8xy4fPrRf69nOM1ZgtqTTJZIRSJbhJSvhPeOnetACD/vWPymiNTDc5WMZn0yFU0RS8Vbmo/vN6J7OefF8qY6q76uM7enhMbSMixz9dsAlTOZBeKldAe2PnC9ORu2j5kgfKqhY+juncj9eyk89RiQ8XjairRl6Y5uUbtHUipPC3osZK0gXH05TSto9eW+CUAvkUiocfo452EjSRQivdKYp6PyTwNouU=
+        type: string
+      key1id:
+        description: ''
+        example: 71adb693f2f4457abfc493949f9a4f2b
+        type: string
+    required:
+    - message
+    - key1id
+  Dev/getmemauthinforequest:
+    title: dev/getmemauthinfoRequest
+    example:
+      message: zFdzSjGHfTH/Vtj/LhwUjEPZMlqHLMqlR/4b2cr+SjsESiNU/LTxcvUsZC3w5l2xclpe9Oj+3MiTlNLgmN5f1ZcSr9r8bBjAD5hEED8tWSU=
+      key1id: 71adb693f2f4457abfc493949f9a4f2b
+    type: object
+    properties:
+      message:
+        description: ''
+        example: zFdzSjGHfTH/Vtj/LhwUjEPZMlqHLMqlR/4b2cr+SjsESiNU/LTxcvUsZC3w5l2xclpe9Oj+3MiTlNLgmN5f1ZcSr9r8bBjAD5hEED8tWSU=
+        type: string
+      key1id:
+        description: ''
+        example: 71adb693f2f4457abfc493949f9a4f2b
+        type: string
+    required:
+    - message
+    - key1id
+  Dev/authwithssnrequest:
+    title: dev/authwithssnRequest
+    example:
+      message: zFdzSjGHfTH/Vtj/LhwUjEPZMlqHLMqlR/4b2cr+Sjv9UJ2Ck171IDBwuwFAC5ia0MA+x4zWN6m2f1yb1YAtHta3FROTPUN8iDisuHCD/XaUfZmdR4IgTVSOdZCdha9l
+      key1id: 71adb693f2f4457abfc493949f9a4f2b
+    type: object
+    properties:
+      message:
+        description: ''
+        example: zFdzSjGHfTH/Vtj/LhwUjEPZMlqHLMqlR/4b2cr+Sjv9UJ2Ck171IDBwuwFAC5ia0MA+x4zWN6m2f1yb1YAtHta3FROTPUN8iDisuHCD/XaUfZmdR4IgTVSOdZCdha9l
+        type: string
+      key1id:
+        description: ''
+        example: 71adb693f2f4457abfc493949f9a4f2b
+        type: string
+    required:
+    - message
+    - key1id
+  DecryptRequest:
+    title: decryptRequest
+    example:
+      message: LaYioNcIw5nwn7+pZRPcDrEMCbv0Ay3tvU8pKZNtYWm4qUnBbL+W0FT0U+Zf7+sqJBz08HDaWBoQoaMCXyObHasVu3jDprFP8E7cA1MOxHZKsF1ruLcOqTR0uWqIHQfud3ZUYqdqRXMBLoT8Xw8xVIo44CyEOuNGr95Ynp6f2JLx1PjYLkUpAGvkd9ttWknSstqNNwZIscFNmP0f8Kw6dZlJ6O1n+uSIVx/5BYAiPwgi+6nX7N8wZ6gpYJpk50a6ELq1YE4uvwYtYGL4O4EwHuGya8FGB2gglCYSBslTa8QqLOzNW5lWg93MfBYQrAqlS29owYZrztvx8R9Gn1uRJZco7PItsaeeVyM99tNul2+BxRyP7RTIT4QWwvxb+0TwsVrqw6IjT/a4zr0+RIHSqJZEMhvkJvU9zZZTqO9kCT7ilzi3qKZxKBNRx9K+vAvkLhejUY/gJWWowNHmr3UCNWqNG1M7d0Bc7Z8q0wp/NATndxtWhiKMrZ2ZdXQFoVmpxBa3sCJGOCN6ECMfTgMHXqq6TgyE9uW2zPY3V0WgZqpkHi85GsXOYzPGnE4GF1oCnIAzG92c7jqI+n2ZxjFWznHCIr9Al7ZqPJaLjj4Tq+aQg2Sdv7B8oixzy7RlEfHEiaRN3lBGYbK6VDk62uiCXaiGzjc6vEEwGfSSnvoMyCCkJPFArRpxIW/e2LUvl2ENnNulEcniFuc0xLD0VhnS/yk8IEVJsJWeYGPH35JWuaEhjH04D7co3g0LZZCNWbiOgE7StlQVRuDWc8eQhy6tmwP9U9BF2ZZFp2pwyXQBsoa7IHnWdQkoNvzvJr2HAOX4HFdM1FFqQVrIAZk1ZtxOvj1+k4/7OJxImBnLZtIOCBDnxl06PQSKBjmKzSLu1VqQeAZygGaaVcqEe2RDpsOPfLhwQE4Mx9O/Xn+++egX9tWipP2KrjM/++MsBhBf2W0wGWZG47IYHuITh4lfgLuOLDK9jHanq6cNYIspsEJQJqcz6fXuJXB2fHVDqQieWmmG
+      key2id: e3d6c6213b6b4458916142ff2cb71db1
+    type: object
+    properties:
+      message:
+        description: ''
+        example: LaYioNcIw5nwn7+pZRPcDrEMCbv0Ay3tvU8pKZNtYWm4qUnBbL+W0FT0U+Zf7+sqJBz08HDaWBoQoaMCXyObHasVu3jDprFP8E7cA1MOxHZKsF1ruLcOqTR0uWqIHQfud3ZUYqdqRXMBLoT8Xw8xVIo44CyEOuNGr95Ynp6f2JLx1PjYLkUpAGvkd9ttWknSstqNNwZIscFNmP0f8Kw6dZlJ6O1n+uSIVx/5BYAiPwgi+6nX7N8wZ6gpYJpk50a6ELq1YE4uvwYtYGL4O4EwHuGya8FGB2gglCYSBslTa8QqLOzNW5lWg93MfBYQrAqlS29owYZrztvx8R9Gn1uRJZco7PItsaeeVyM99tNul2+BxRyP7RTIT4QWwvxb+0TwsVrqw6IjT/a4zr0+RIHSqJZEMhvkJvU9zZZTqO9kCT7ilzi3qKZxKBNRx9K+vAvkLhejUY/gJWWowNHmr3UCNWqNG1M7d0Bc7Z8q0wp/NATndxtWhiKMrZ2ZdXQFoVmpxBa3sCJGOCN6ECMfTgMHXqq6TgyE9uW2zPY3V0WgZqpkHi85GsXOYzPGnE4GF1oCnIAzG92c7jqI+n2ZxjFWznHCIr9Al7ZqPJaLjj4Tq+aQg2Sdv7B8oixzy7RlEfHEiaRN3lBGYbK6VDk62uiCXaiGzjc6vEEwGfSSnvoMyCCkJPFArRpxIW/e2LUvl2ENnNulEcniFuc0xLD0VhnS/yk8IEVJsJWeYGPH35JWuaEhjH04D7co3g0LZZCNWbiOgE7StlQVRuDWc8eQhy6tmwP9U9BF2ZZFp2pwyXQBsoa7IHnWdQkoNvzvJr2HAOX4HFdM1FFqQVrIAZk1ZtxOvj1+k4/7OJxImBnLZtIOCBDnxl06PQSKBjmKzSLu1VqQeAZygGaaVcqEe2RDpsOPfLhwQE4Mx9O/Xn+++egX9tWipP2KrjM/++MsBhBf2W0wGWZG47IYHuITh4lfgLuOLDK9jHanq6cNYIspsEJQJqcz6fXuJXB2fHVDqQieWmmG
+        type: string
+      key2id:
+        description: ''
+        example: e3d6c6213b6b4458916142ff2cb71db1
+        type: string
+    required:
+    - message
+    - key2id
+  Dev/updatememprofilerequest:
+    title: dev/updatememprofileRequest
+    example:
+      message: eOc7jw73C+4hKtew2NSGpWp8vvMKZM9/nAGTnfuF2y6F38NlI4Smb7JkSb1iMMTmfiXWtacveEVCal0kPpZD6l8FqOntA0NSLQEbwkAplNGhJvHuTw4htRplzzytHw2OugKsQ5BjxfaFyTpCcS4aaQIkl5ctZk/XHOH74NyA/e711aOajBOMF9iGPMX01y9qki5Q23Gd7D6zisztTJsLvhT2xc45lzntLrSWjlxsLkNfITHU5Sk8IG7fPHt9AucIrnJ4qEid2OwAbwCrkWetzw==
+      key1id: 0fd3e4264e6c4734af3cabdfa21ffa87
+    type: object
+    properties:
+      message:
+        description: ''
+        example: eOc7jw73C+4hKtew2NSGpWp8vvMKZM9/nAGTnfuF2y6F38NlI4Smb7JkSb1iMMTmfiXWtacveEVCal0kPpZD6l8FqOntA0NSLQEbwkAplNGhJvHuTw4htRplzzytHw2OugKsQ5BjxfaFyTpCcS4aaQIkl5ctZk/XHOH74NyA/e711aOajBOMF9iGPMX01y9qki5Q23Gd7D6zisztTJsLvhT2xc45lzntLrSWjlxsLkNfITHU5Sk8IG7fPHt9AucIrnJ4qEid2OwAbwCrkWetzw==
+        type: string
+      key1id:
+        description: ''
+        example: 0fd3e4264e6c4734af3cabdfa21ffa87
+        type: string
+    required:
+    - message
+    - key1id
+  Dev/updatememprofile:
+    title: dev/updatememprofile
+    example:
+      result: -1
+      errormessage: uid or upid or subid or ttype or memkey or memkeyvalue are empty
+      displaymessage: uid or upid or subid or ttype or memkey or memkeyvalue are empty
+    type: object
+    properties:
+      result:
+        description: ''
+        example: -1
+        type: string
+      errormessage:
+        description: ''
+        example: uid or upid or subid or ttype or memkey or memkeyvalue are empty
+        type: string
+      displaymessage:
+        description: ''
+        example: uid or upid or subid or ttype or memkey or memkeyvalue are empty
+        type: string
+    required:
+    - result
+    - errormessage
+    - displaymessage
+  Dev/updatememprofileCopyrequest:
+    title: dev/updatememprofile copyRequest
+    example:
+      message: LG3jPpH73/1v6pvve5cbi4te4ZH+yD5rueIw4gh5JugsDqQP2QKP80BAn265Czv2p1kri70m7PRZTje7eLk22Ve0qUN4uOjcosxrH/YeCs+qiC0O+YcS+4AMLtGOQ/JjQ7bJDHSk91WC3T747BHWaqaWbOhu+g8Nld1E0Iqux694+ceXPMoBT6YVhA19JThhysYP5Cub1/kp3U3FDUhtr4ir4i03MdoeED4Ws49s69nOjNd57eZucDIGcYZGWpNlrSw8KWeBixNRvbJSPApFaQ==
+      key1id: c2376ededd0d4101929c6084679ab10f
+    type: object
+    properties:
+      message:
+        description: ''
+        example: LG3jPpH73/1v6pvve5cbi4te4ZH+yD5rueIw4gh5JugsDqQP2QKP80BAn265Czv2p1kri70m7PRZTje7eLk22Ve0qUN4uOjcosxrH/YeCs+qiC0O+YcS+4AMLtGOQ/JjQ7bJDHSk91WC3T747BHWaqaWbOhu+g8Nld1E0Iqux694+ceXPMoBT6YVhA19JThhysYP5Cub1/kp3U3FDUhtr4ir4i03MdoeED4Ws49s69nOjNd57eZucDIGcYZGWpNlrSw8KWeBixNRvbJSPApFaQ==
+        type: string
+      key1id:
+        description: ''
+        example: c2376ededd0d4101929c6084679ab10f
+        type: string
+    required:
+    - message
+    - key1id
